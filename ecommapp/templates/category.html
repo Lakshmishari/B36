@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+{% extends 'layout.html'%}
+{% block content %}
+
+<ul>
+    {% for category in categories %}
+        <li>
+            <strong>Name:</strong> {{ category.name }} <br>
+            <strong>Description:</strong> {{ category.description }}
+            {% if user.is_authenticated %}
+            <a href="{% url 'category_update' category.id %}">Edit</a>  
+            <a href="{% url 'category_delete' category.id %}">Delete</a>
+            {% endif %} 
+        </li>
+    {% empty %}
+        <li>No categories available</li>
+    {% endfor %}
+</ul>
+{% endblock %}

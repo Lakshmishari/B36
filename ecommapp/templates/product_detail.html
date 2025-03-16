@@ -1,0 +1,51 @@
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding ">
+    <div class="container">
+      <h2 class="custom_heading">Product Details</h2>
+      
+      <p class="custom_heading-text">
+        There are many variations of passages of Lorem Ipsum available, but
+        the majority have
+      </p>
+      <div class=" layout_padding2">
+        <div class="card-deck">
+          <div class="card">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.p_name }}" style="width: 250px; height: auto;">
+
+            {% else %}
+                    <p>No image uploaded</p>
+                    {% endif %}
+            <div class="card-body">
+              <h1>{{ product.p_name }}</h1>
+              <p>{{ product.category.name }}</p>
+              <p>{{ product.price }} INR</p>
+              <p>{{ product.description }}</p>
+            </div>
+          </div>
+          
+          
+            
+          
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="{% url 'product_update' product.p_id %}" class="custom_dark-btn">
+          Edit
+        </a>
+        <a href="{% url 'product_delete' product.p_id %}" class="custom_dark-btn">
+          Delete
+        </a>
+        <a href="{% url 'add_to_cart' product.p_id %}" class="custom_dark-btn">
+           Add to Cart
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  

@@ -1,0 +1,32 @@
+
+<style>
+    
+    form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+   
+    
+    button { margin-top: 1px; }
+    #b1 {
+        background-color: #59ab6e;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        }
+        h3{
+                margin-left: 566px;
+                }
+      h6{
+                margin-left: 480px;
+                }     
+   
+</style>
+<h3>Delete Product</h3>
+<h6>Are you sure you want to delete "{{ product.product_name }}"?</h6>
+<form method="post">
+    {% csrf_token %}
+    
+    <button id="b1" type="submit">Yes, delete</button>
+    <a href="{% url 'product_list' %}">Cancel</a>
+</form>

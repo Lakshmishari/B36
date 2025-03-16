@@ -1,0 +1,13 @@
+<!-- category_form.html -->
+
+<h3>{% if form.instance.id %}Edit category
+    {% else %}Add category
+    {% endif %}</h3>
+<!-- <form method="post">   -->
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button id="b1" type="submit">Save</button>
+    
+</form>
+
